@@ -60,6 +60,7 @@ const SigninForm = () => {
       return toast({ title: "Sign up failed. Please try again." });
     }
   }
+  console.log(isUserLoading);
 
   return (
     <Form {...form}>

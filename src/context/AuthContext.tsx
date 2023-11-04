@@ -35,6 +35,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const checkAuthUser = async () => {
     try {
+      setIsLoading(true);
       const currentAccount = await getCurrentUser();
 
       if (currentAccount) {
@@ -48,6 +49,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         });
 
         setIsAuthenticated(true);
+        setIsLoading(false);
 
         return true;
       }
